@@ -1,3 +1,12 @@
 [submodule ".vim/bundle/gundo.vim"]
 	path = .vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
+[submodule ".vim/bundle/vim-sneak"]
+	path = .vim/bundle/vim-sneak
+	url = git://github.com/justinmk/vim-sneak.git
+[submodule ".vim/bundle/vim-mundo"]
+	path = .vim/bundle/vim-mundo
+	url = https://github.com/simnalamburt/vim-mundo.git
+[submodule ".vim/bundle/badwolf"]
+	path = .vim/bundle/badwolf
+	url = https://github.com/sjl/badwolf.git

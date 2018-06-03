@@ -1,15 +1,10 @@
-" Douglas Black
+execute pathogen#infect()
 " Colors {{{
 syntax enable           " enable syntax processing
 colorscheme badwolf
-set termguicolors
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
-let g:vimwiki_list = [{'path': '~/.wiki/'}]
-set clipboard=unnamed
-" }}}
-" Spaces & Tabs {{{
 set tabstop=4           " 4 space tab
 set expandtab           " use spaces for tabs
 set softtabstop=4       " 4 space tab
@@ -49,30 +44,16 @@ nnoremap gV `[v`]
 " Leader Shortcuts {{{
 let mapleader=","
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
-nnoremap <leader>h :A<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>et :exec ":vsp /Users/dblack/notes/vim/" . strftime('%m-%d-%y') . ".md"<CR>
-nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>et :exec ":vsp $home/notes/vim/" . strftime('%m-%d-%y') . ".md"<CR>
 nnoremap <leader>l :call <SID>ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
-nnoremap <leader>s :mksession<CR>
-nnoremap <leader>a :Ag 
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
-nnoremap <leader>d :GoDoc 
 nnoremap <leader>t :TestFile<CR>
-nnoremap <leader>r :call <SID>RunFile()<CR>
-nnoremap <leader>b :call <SID>BuildFile()<CR>
 vnoremap <leader>y "+y
 " }}}
 
-" CtrlP {{{
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
-" }}}
 " Syntastic {{{
 let g:syntastic_python_flake8_args='--ignore=E501'
 let g:syntastic_ignore_files = ['.java$']
@@ -95,43 +76,12 @@ augroup configgroup
     autocmd BufEnter *.avsc setlocal ft=json
 augroup END
 " }}}
-" Testing {{{
-let test#strategy = 'neovim'
-let test#python#runner = 'nose'
-" }}}
 " Backups {{{
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
-" }}}
-" Vim Plug {{{
-call plug#begin('~/.vim/plugged')
-Plug 'bling/vim-airline'
-Plug 'derekwyatt/vim-scala'
-Plug 'elixir-editors/vim-elixir'
-Plug 'fatih/vim-go'
-Plug 'janko-m/vim-test'
-Plug 'keith/swift.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'moll/vim-node'
-Plug 'scrooloose/syntastic'
-Plug 'simnalamburt/vim-mundo'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
-call plug#end()
-" }}}
-" airline {{{
-set laststatus=2
-let g:airline_theme = 'zenburn'
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
 " }}}
 " Custom Functions {{{
 function! <SID>ToggleNumber()
@@ -167,20 +117,5 @@ function! <SID>CleanFile()
     call cursor(l, c)
 endfunc
 
-function! <SID>RunFile()
-    let ext = expand("%:e")
-    if(ext == "go") 
-        :GoRun
-    endif
-endfunc
-
-function! <SID>BuildFile()
-    let ext = expand("%:e")
-    if(ext == "go") 
-        :GoBuild
-    endif
-endfunc
 " }}}
 "
-
-" vim:foldmethod=marker:foldlevel=0
