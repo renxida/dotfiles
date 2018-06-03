@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/badwolf"]
 	path = .vim/bundle/badwolf
 	url = https://github.com/sjl/badwolf.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
