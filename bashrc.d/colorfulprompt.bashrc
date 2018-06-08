@@ -1,3 +1,4 @@
+color_prompt=yes
 export PROMPT_COMMAND=__prompt_command      # Func to gen PS1 after CMDs
 
 function __prompt_command(){
