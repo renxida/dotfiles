@@ -58,6 +58,9 @@ vnoremap <leader>y "+y
 let g:syntastic_python_flake8_args='--ignore=E501'
 let g:syntastic_ignore_files = ['.java$']
 let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {'mode':'passive'}
 " }}}
 " AutoGroups {{{
 augroup configgroup
