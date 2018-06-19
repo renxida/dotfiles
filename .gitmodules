@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "tmux/tmux-logging"]
+	path = tmux/tmux-logging
+	url = https://github.com/tmux-plugins/tmux-logging.git
