@@ -1,6 +1,5 @@
 execute pathogen#infect()
 " Colors {{{
-syntax enable           " enable syntax processing
 colorscheme badwolf
 " }}}
 " Misc {{{
@@ -21,20 +20,12 @@ set nocursorline        " highlight current line
 set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
-set fillchars+=vert:┃
+set fillchars+=vert:│
 " }}}
 " Searching {{{
 set ignorecase          " ignore case when searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
-" }}}
-" Folding {{{
-"=== folding ===
-set foldmethod=indent   " fold based on indent level
-set foldnestmax=10      " max 10 depth
-set foldenable          " don't fold files by default on open
-nnoremap <space> za
-set foldlevelstart=10   " start with fold level of 1
 " }}}
 " Line Shortcuts {{{
 nnoremap j gj
@@ -44,13 +35,10 @@ nnoremap gV `[v`]
 " Leader Shortcuts {{{
 let mapleader=","
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>et :exec ":vsp $home/notes/vim/" . strftime('%m-%d-%y') . ".md"<CR>
 nnoremap <leader>l :call <SID>ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
-nnoremap <leader>t :TestFile<CR>
 vnoremap <leader>y "+y
 " }}}
 
