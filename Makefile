@@ -6,7 +6,7 @@ install:
 	cp .vimrc ../
 	cp .tmux.conf ../
 	cp .gitconfig ../
-	bashrc.d/install.sh
+	cp .bashrc ../
 
 update:
 	cp ~/.vimrc .
