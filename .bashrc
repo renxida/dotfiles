@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
 fi
 
 # added by Anaconda3 installer
-export PATH="/home/xren/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 #source bashrc.d
 for file in $HOME/dotfiles/bashrc.d/*.bashrc;
 do
