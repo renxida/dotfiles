@@ -2,9 +2,9 @@ color_prompt=yes
 export PROMPT_COMMAND=__prompt_command      # Func to gen PS1 after CMDs
 
 HOSTNAME_HASH=$(sha1sum <<< "${HOSTNAME}")
-#HOSTNAME_HASH=${HOSTNAME_HASH%"${HOSTNAME_HASH#????}"} # cut to 4 chars
+HOSTNAME_HASH=${HOSTNAME_HASH%"${HOSTNAME_HASH#????????}"} # cut down to avoid int ovfl
 HN_NUMBER=$((0x${HOSTNAME_HASH%% *}))
-COLORIZED_HOSTNAME="\e[01;3$(($HN_NUMBER % 6 + 1))m${HOSTNAME}"
+COLORIZED_HOSTNAME="\e[38;5;$(($HN_NUMBER % 231 + 1))m${HOSTNAME}"
 
 function __prompt_command(){
     local EXIT="$?"
