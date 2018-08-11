@@ -120,6 +120,7 @@ fi
 # added by Anaconda3 installer
 export PATH="$HOME/anaconda3/bin:$PATH"
 #source bashrc.d
+export PATH="$HOME/.local/bin:$PATH"
 for file in $HOME/dotfiles/bashrc.d/*.bashrc;
 do
     source "$file"
